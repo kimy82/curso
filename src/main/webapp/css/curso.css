@@ -1,0 +1,12 @@
+.employees-list{
+	margin: 10px 0;
+}
+
+.employees-list .employee-box {
+	border: 1px solid grey;
+	padding: 10px;
+}
+
+.error {
+	color: red;
+}

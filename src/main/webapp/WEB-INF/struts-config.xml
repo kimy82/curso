@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+"http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+	<form-beans>
+		<form-bean name="myForm" type="com.atos.curso.forms.MyForm" />
+		<form-bean name="employeeForm" type="com.atos.curso.forms.EmployeeForm" />
+	</form-beans>
+
+	<action-mappings>
+		<action path="/myAction" type="com.atos.curso.actions.MyWelcomeAction"
+			name="myForm" scope="session">
+
+			<forward name="success" path="/mySuccess.jsp" />
+		</action>
+
+		<action path="/saveEmployee" type="com.atos.curso.actions.MySaveAction"
+			name="employeeForm" validate="true" scope="request" input="/mySuccess.jsp">
+
+			<forward name="success" path="/mySuccessSave.jsp" />
+		</action>
+
+		<action path="/jquery" type="org.apache.struts.actions.ForwardAction"
+			parameter="/jqueryExamples.jsp" />
+
+		<action path="/MyDispatchAction" type="com.atos.curso.actions.MyDispatchAction"
+			parameter="action">
+
+			<forward name="page1" path="/dispatched1.jsp" />
+			<forward name="page2" path="/dispatched2.jsp" />
+		</action>
+	</action-mappings>
+
+	<message-resources parameter="Common" />
+</struts-config>
