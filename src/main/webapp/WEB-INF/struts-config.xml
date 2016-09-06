@@ -8,13 +8,43 @@
 	<form-beans>
 		<form-bean name="myForm" type="com.atos.curso.forms.MyForm" />
 		<form-bean name="employeeForm" type="com.atos.curso.forms.EmployeeForm" />
+		
+		<form-bean name="employeeXMLValidationForm"
+			type="com.atos.curso.forms.EmployeeXMLValidationForm" />
 	</form-beans>
+
+	<global-exceptions>
+
+		<exception key="error.global.mesage" type="java.io.IOException"
+			path="/error.jsp" />
+
+		<exception key="error.global.mesage" type="javax.naming.NoPermissionException"
+			handler="com.atos.curso.handlers.PermissionExceptionsHandler" path="/error.jsp" />
+
+	</global-exceptions>
 
 	<action-mappings>
 		<action path="/myAction" type="com.atos.curso.actions.MyWelcomeAction"
 			name="myForm" scope="session">
 
 			<forward name="success" path="/mySuccess.jsp" />
+		</action>
+
+		<action path="/myIOExceptionAction" type="com.atos.curso.actions.MyIOExceptionAction"
+			name="myForm" scope="session">
+			<forward name="success" path="/myNotReached.jsp" />
+		</action>
+
+		<action path="/myPermissionExceptionAction"
+			type="com.atos.curso.actions.MyPermissionExceptionAction" name="myForm"
+			scope="session">
+			<forward name="success" path="/myNotReached.jsp" />
+		</action>
+
+		<action path="/myNullPointerExceptionAction"
+			type="com.atos.curso.actions.MyNullPointerExceptionAction" name="myForm"
+			scope="session">
+			<forward name="success" path="/myNotReached.jsp" />
 		</action>
 
 		<action path="/saveEmployee" type="com.atos.curso.actions.MySaveAction"
@@ -32,7 +62,25 @@
 			<forward name="page1" path="/dispatched1.jsp" />
 			<forward name="page2" path="/dispatched2.jsp" />
 		</action>
+
+		<action path="/saveWithXMLValidation" type="com.atos.curso.actions.SaveWithXMLValidationAction"
+			name="employeeXMLValidationForm" input="/xmlValidation.jsp">
+
+			<forward name="success" path="/mySuccessSave.jsp" />
+
+		</action>
+
+		<action path="/employeeXMLValidationForm" type="org.apache.struts.actions.ForwardAction"
+			parameter="/xmlValidation.jsp" />
+			
 	</action-mappings>
 
 	<message-resources parameter="Common" />
+
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames"
+			value="/WEB-INF/validator-rules.xml, /WEB-INF/validator-employee.xml" />
+
+	</plug-in>
+	
 </struts-config>
