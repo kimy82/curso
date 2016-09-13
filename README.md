@@ -22,7 +22,7 @@
     * Basic struts tags.
 
 ##YOUR PROJECT
-_AIM_ Develop a dashboard were someone can go an register themselves and save your programming skills.
+_AIM_ Develop a dashboard were someone can register and save their programming skills.
 * Basically should be something like.
     * One with a list of users registered (NAME, SKILLS) with a button for login in or register.
     * Another one for saving your programming skills.
