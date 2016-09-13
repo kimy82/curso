@@ -6,7 +6,7 @@
 <struts-config>
 
 	<form-beans>
-		<form-bean name="myForm" type="com.atos.curso.forms.MyForm" />
+		<form-bean name="welcomeForm" type="com.atos.curso.forms.WelcomeForm" />
 		<form-bean name="employeeForm" type="com.atos.curso.forms.EmployeeForm" />
 		
 		<form-bean name="employeeXMLValidationForm"
@@ -24,39 +24,39 @@
 	</global-exceptions>
 
 	<action-mappings>
-		<action path="/myAction" type="com.atos.curso.actions.MyWelcomeAction"
-			name="myForm" scope="session">
+		<action path="/welcome" type="com.atos.curso.actions.WelcomeAction"
+			name="welcomeForm" scope="session">
 
-			<forward name="success" path="/mySuccess.jsp" />
+			<forward name="success" path="/success.jsp" />
 		</action>
 
-		<action path="/myIOExceptionAction" type="com.atos.curso.actions.MyIOExceptionAction"
-			name="myForm" scope="session">
-			<forward name="success" path="/myNotReached.jsp" />
+		<action path="/iOExceptionAction" type="com.atos.curso.actions.IOExceptionAction"
+			name="welcomeForm" scope="session">
+			<forward name="success" path="/notReached.jsp" />
 		</action>
 
-		<action path="/myPermissionExceptionAction"
-			type="com.atos.curso.actions.MyPermissionExceptionAction" name="myForm"
+		<action path="/permissionExceptionAction"
+			type="com.atos.curso.actions.PermissionExceptionAction" name="welcomeForm"
 			scope="session">
-			<forward name="success" path="/myNotReached.jsp" />
+			<forward name="success" path="/notReached.jsp" />
 		</action>
 
-		<action path="/myNullPointerExceptionAction"
-			type="com.atos.curso.actions.MyNullPointerExceptionAction" name="myForm"
+		<action path="/nullPointerExceptionAction"
+			type="com.atos.curso.actions.NullPointerExceptionAction" name="welcomeForm"
 			scope="session">
-			<forward name="success" path="/myNotReached.jsp" />
+			<forward name="success" path="/notReached.jsp" />
 		</action>
 
-		<action path="/saveEmployee" type="com.atos.curso.actions.MySaveAction"
-			name="employeeForm" validate="true" scope="request" input="/mySuccess.jsp">
+		<action path="/saveEmployee" type="com.atos.curso.actions.EmployeeSaveAction"
+			name="employeeForm" validate="true" scope="request" input="/success.jsp">
 
-			<forward name="success" path="/mySuccessSave.jsp" />
+			<forward name="success" path="/successSave.jsp" />
 		</action>
 
 		<action path="/jquery" type="org.apache.struts.actions.ForwardAction"
 			parameter="/jqueryExamples.jsp" />
 
-		<action path="/MyDispatchAction" type="com.atos.curso.actions.MyDispatchAction"
+		<action path="/MultipleActionsAction" type="com.atos.curso.actions.MyDispatchAction"
 			parameter="action">
 
 			<forward name="page1" path="/dispatched1.jsp" />
@@ -66,7 +66,7 @@
 		<action path="/saveWithXMLValidation" type="com.atos.curso.actions.SaveWithXMLValidationAction"
 			name="employeeXMLValidationForm" input="/xmlValidation.jsp">
 
-			<forward name="success" path="/mySuccessSave.jsp" />
+			<forward name="success" path="/successSave.jsp" />
 
 		</action>
 

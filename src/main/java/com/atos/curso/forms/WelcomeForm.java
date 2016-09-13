@@ -2,7 +2,7 @@ package com.atos.curso.forms;
 
 import org.apache.struts.action.ActionForm;
 
-public class MyForm extends ActionForm {
+public class WelcomeForm extends ActionForm {
 
 	/**
 	 * 

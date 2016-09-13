@@ -14,7 +14,7 @@
 </head>
 <body>
 	<h1>
-		<bean:write name="myForm" property="message" />
+		<bean:write name="welcomeForm" property="message" />
 	</h1>
 	<div class="employees-list" >
 		<logic:iterate name="atosEmployees" id="atosEmployee">

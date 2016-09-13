@@ -12,6 +12,6 @@
 </head>
 <body>
 	Employee Saved!
-	<a href="<c:url value="/myAction.do" />" >Go back</a>
+	<a href="<c:url value="/welcome.do" />" >Go back</a>
 </body>
 </html>
