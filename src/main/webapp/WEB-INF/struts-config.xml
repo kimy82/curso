@@ -24,7 +24,7 @@
 	</global-exceptions>
 
 	<action-mappings>
-		<action path="/welcome" type="com.atos.curso.actions.WelcomeAction"
+		<action path="/employeeDashboard" type="com.atos.curso.actions.EmployeeDashboardAction"
 			name="welcomeForm" scope="session">
 
 			<forward name="success" path="/success.jsp" />
@@ -55,23 +55,27 @@
 
 		<action path="/jquery" type="org.apache.struts.actions.ForwardAction"
 			parameter="/jqueryExamples.jsp" />
+		<action path="/welcome" type="org.apache.struts.actions.ForwardAction"
+			parameter="/welcome.jsp" />
 
-		<action path="/MultipleActionsAction" type="com.atos.curso.actions.MyDispatchAction"
+		<action path="/multipleActionsAction" type="com.atos.curso.actions.MultipleActionsAction"
 			parameter="action">
 
 			<forward name="page1" path="/dispatched1.jsp" />
 			<forward name="page2" path="/dispatched2.jsp" />
 		</action>
 
-		<action path="/saveWithXMLValidation" type="com.atos.curso.actions.SaveWithXMLValidationAction"
+		<action path="/saveWithXMLValidation" type="com.atos.curso.actions.EmployeeSaveWithXMLValidationAction"
 			name="employeeXMLValidationForm" input="/xmlValidation.jsp">
 
 			<forward name="success" path="/successSave.jsp" />
-
 		</action>
 
 		<action path="/employeeXMLValidationForm" type="org.apache.struts.actions.ForwardAction"
 			parameter="/xmlValidation.jsp" />
+			
+		<action path="/downloadTutorial" type="com.atos.curso.actions.TutorialDownloadAction">
+ 		</action>
 			
 	</action-mappings>
 
