@@ -1,5 +1,8 @@
 package com.atos.curso.models;
 
+/**
+ * Employee model class.
+ */
 public class Employee {
 
 	private int id;

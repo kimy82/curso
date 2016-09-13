@@ -2,6 +2,9 @@ package com.atos.curso.forms;
 
 import org.apache.struts.action.ActionForm;
 
+/**
+ * Simple form going to a page.
+ */
 public class WelcomeForm extends ActionForm {
 
 	/**

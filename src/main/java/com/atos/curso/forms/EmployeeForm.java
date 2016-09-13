@@ -7,6 +7,9 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.ActionMessage;
 
+/**
+ * Employee form holding java validation.
+ */
 public class EmployeeForm extends ActionForm {
 
 	/**

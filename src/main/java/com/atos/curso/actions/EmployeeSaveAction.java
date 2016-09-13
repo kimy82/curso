@@ -15,6 +15,9 @@ import com.atos.curso.dao.AtosEmployeeDAO;
 import com.atos.curso.forms.EmployeeForm;
 import com.atos.curso.models.Employee;
 
+/**
+ * Holds action "/saveEmployee.do"
+ */
 public class EmployeeSaveAction extends Action {
 
 	private AtosEmployeeDAO atosEmployeeDAO = new AtosEmployeeDAO();

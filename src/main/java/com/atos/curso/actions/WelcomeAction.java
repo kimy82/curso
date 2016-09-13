@@ -14,6 +14,9 @@ import com.atos.curso.dao.AtosEmployeeDAO;
 import com.atos.curso.forms.WelcomeForm;
 import com.atos.curso.models.Employee;
 
+/**
+ * Action for "/welcome.do"
+ */
 public class WelcomeAction extends Action {
 
 	private AtosEmployeeDAO atosEmployeeDAO = new AtosEmployeeDAO();

@@ -8,6 +8,9 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
+/**
+ * Holds action "/nullPointerExceptionAction.do"
+ */
 public class NullPointerExceptionAction extends Action {
 
 	@SuppressWarnings("unused")

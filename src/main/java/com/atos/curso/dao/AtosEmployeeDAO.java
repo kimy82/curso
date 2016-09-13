@@ -10,6 +10,11 @@ import java.util.List;
 import com.atos.curso.database.TtConnection;
 import com.atos.curso.models.Employee;
 
+/**
+ * CRUD Operations to the DB.
+ * Create, read, update, delete
+ * 
+ */
 public class AtosEmployeeDAO {
 
 	private TtConnection ttConnection = TtConnection.getInstance();

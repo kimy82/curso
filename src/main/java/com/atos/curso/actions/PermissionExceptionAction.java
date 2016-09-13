@@ -9,6 +9,9 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
+/**
+ * Action for "/permissionExceptionAction.do"
+ */
 public class PermissionExceptionAction extends Action {
 
 	@SuppressWarnings("unused")

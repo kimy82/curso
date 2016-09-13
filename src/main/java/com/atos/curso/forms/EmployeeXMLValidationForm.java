@@ -2,6 +2,9 @@ package com.atos.curso.forms;
 
 import org.apache.struts.validator.ValidatorForm;
 
+/**
+ * Employee form holding XML validation.
+ */
 public class EmployeeXMLValidationForm extends ValidatorForm {
 
 	/**

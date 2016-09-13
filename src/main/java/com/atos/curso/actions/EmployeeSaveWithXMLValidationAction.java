@@ -15,6 +15,9 @@ import com.atos.curso.dao.AtosEmployeeDAO;
 import com.atos.curso.forms.EmployeeXMLValidationForm;
 import com.atos.curso.models.Employee;
 
+/**
+ * Holds action "/saveWithXMLValidation.do"
+ */
 public class EmployeeSaveWithXMLValidationAction extends Action {
 
 	private AtosEmployeeDAO atosEmployeeDAO = new AtosEmployeeDAO();

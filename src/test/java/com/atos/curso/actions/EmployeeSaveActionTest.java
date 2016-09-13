@@ -1,12 +1,10 @@
 package com.atos.curso.actions;
 
-import java.lang.reflect.Constructor;
-
-import com.atos.curso.database.TtConnection;
-
 import servletunit.struts.MockStrutsTestCase;
 
-
+/**
+ * Test the creation of a new employee.
+ */
 public class EmployeeSaveActionTest extends MockStrutsTestCase {
 
 	public EmployeeSaveActionTest(String testName) {
@@ -22,14 +20,14 @@ public class EmployeeSaveActionTest extends MockStrutsTestCase {
 		super.tearDown();
 	}
 
-	public void testSaveAction_GoesBackToFormPageWithErrorMessage() {
+	public void test_WhenSaveEmployee_GibenNoNameinForm_ThenErrorMessageOccur() {
 		setRequestPathInfo("/saveEmployee.do");
 		actionPerform();
 		verifyForwardPath("/mySuccess.jsp");
 		verifyActionErrors(new String[] { "error.common.name.required" });
 	}
 
-	public void testSaveAction_CreatesEmployee() {
+	public void test_WhenSaveEmployee_GibenFormFiedlsAreCorrect_ThenNewEmployeeIsSaved() {
 		addRequestParameter("name", "vikas");
 		addRequestParameter("surname", "vikas surname");
 		addRequestParameter("address", "Vikas address");

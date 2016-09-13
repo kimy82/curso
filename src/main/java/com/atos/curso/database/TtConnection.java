@@ -5,6 +5,9 @@ import java.sql.SQLException;
 
 import com.timesten.jdbc.TimesTenDataSource;
 
+/**
+ * Singleton holding the timesten DB Connection
+ */
 public class TtConnection {
 
 	private static TtConnection ttConnection;

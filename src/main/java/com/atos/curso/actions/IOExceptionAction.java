@@ -10,6 +10,9 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
+/**
+ * Holds action "/iOExceptionAction.do"
+ */
 public class IOExceptionAction extends Action {
 
 	@SuppressWarnings("unused")
