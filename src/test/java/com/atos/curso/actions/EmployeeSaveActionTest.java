@@ -23,7 +23,7 @@ public class EmployeeSaveActionTest extends MockStrutsTestCase {
 	public void test_WhenSaveEmployee_GibenNoNameinForm_ThenErrorMessageOccur() {
 		setRequestPathInfo("/saveEmployee.do");
 		actionPerform();
-		verifyForwardPath("/mySuccess.jsp");
+		verifyForwardPath("/success.jsp");
 		verifyActionErrors(new String[] { "error.common.name.required" });
 	}
 
@@ -33,7 +33,7 @@ public class EmployeeSaveActionTest extends MockStrutsTestCase {
 		addRequestParameter("address", "Vikas address");
 		setRequestPathInfo("/saveEmployee.do");
 		actionPerform();
-		verifyForwardPath("/mySuccessSave.jsp");
+		verifyForwardPath("/successSave.jsp");
 		verifyNoActionErrors();
 	}
 
