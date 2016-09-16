@@ -8,11 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.atos.curso.database.TtConnection;
+import com.atos.curso.exceptions.AtosDAOException;
 import com.atos.curso.models.Employee;
 
 /**
  * CRUD Operations to the DB. Create, read, update, delete
- * 
  */
 public class AtosEmployeeDAO {
 
@@ -41,6 +41,7 @@ public class AtosEmployeeDAO {
 
 	public void save(Employee employee) {
 
+		if (employee == null || employee.getAddress() == null || employee.getName() == null) { throw new AtosDAOException("employee is null or has some null field"); }
 		try {
 			PreparedStatement pIns = this.ttConnection.getConnection().prepareStatement("insert into Employees values (seq_employee.nextval,?,?,?)");
 			pIns.setString(1, employee.getName());
