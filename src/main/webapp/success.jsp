@@ -11,6 +11,11 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>Employees</title>
 	<link rel="stylesheet" type="text/css" href="<c:url value="/css/curso.css" />" />
+	<script src="<c:url value="/webjars/jquery/3.1.0/jquery.js" />" type="text/javascript" ></script>
+	<script src="<c:url value="/webjars/jquery-ui/1.12.0/jquery-ui.js" />" type="text/javascript" ></script>
+	
+	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 </head>
 <body>
 	<h1>
@@ -21,15 +26,15 @@
 			<div class="employee-box" >
 				<p>
 					<label>Employee Name: </label>
-					<bean:write name="atosEmployee" property="name" />
+					<span><bean:write name="atosEmployee" property="name" /></span>
 				</p>
 				<p>
 					<label>Employee SurName: </label>
-					<bean:write name="atosEmployee" property="surname" />
+					<span><bean:write name="atosEmployee" property="surname" /></span>
 				</p>
 				<p>
 					<label>Employee Address: </label>
-					<bean:write name="atosEmployee" property="address" />
+					<span><bean:write name="atosEmployee" property="address" /></span>
 				</p>
 			</div>
 		</logic:iterate>

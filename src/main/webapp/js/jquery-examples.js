@@ -1,5 +1,5 @@
 var JqueryExamples = {
-	dialog: null,
+	dialog : null,
 	progressInterval : null,
 	_init : function() {
 		$("#date").datepicker();
@@ -10,7 +10,10 @@ var JqueryExamples = {
 			}
 		});
 		$("#accordion").accordion();
-		this.dialog = $( "#dialog" ).dialog({closeOnEscape: false,  autoOpen: false});
+		this.dialog = $("#dialog").dialog({
+			closeOnEscape : false,
+			autoOpen : false
+		});
 	},
 	getDate : function() {
 		return $("#date").val();
@@ -35,11 +38,11 @@ var JqueryExamples = {
 			value : false
 		});
 	},
-	openDialog: function(){
-		$( this.dialog ).dialog( "open" );
+	openDialog : function() {
+		$(this.dialog).dialog("open");
 	},
-	closeDialog: function(){
-		$( this.dialog ).dialog( "close" );
+	closeDialog : function() {
+		$(this.dialog).dialog("close");
 	}
 };
 

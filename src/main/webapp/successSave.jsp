@@ -8,7 +8,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<title>Employees Success</title>
+	<title>Employees Success</title>
 </head>
 <body>
 	Employee Saved!
