@@ -16,12 +16,12 @@ import org.apache.struts.action.ActionMapping;
 public class IOExceptionAction extends Action {
 
 	@SuppressWarnings("unused")
-	public ActionForward execute(ActionMapping mapping,  ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
-		
-		if(1 == 1){
+	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+		if (1 == 1) {
 			throw new IOException();
 		}
-		
+
 		return mapping.findForward("success");
 	}
 }
