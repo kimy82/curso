@@ -2,16 +2,24 @@ var JqueryExamples = {
 	dialog : null,
 	progressInterval : null,
 	_init : function() {
-		$("#date").datepicker();
+		$("#date").datepicker({
+			onSelect : function(date, inst) {
+				console.log(date);
+			}
+		});
 		$("#progressbar").progressbar({
 			value : 37,
 			change : function() {
 				console.log("Has changed!");
 			}
 		});
+
+		$("#start-progress").click($.proxy(this.runProgress, this));
+
+		$("#stop-progress").click($.proxy(this.stopProgress, this));
+
 		$("#accordion").accordion();
 		this.dialog = $("#dialog").dialog({
-			closeOnEscape : false,
 			autoOpen : false
 		});
 	},
@@ -43,6 +51,20 @@ var JqueryExamples = {
 	},
 	closeDialog : function() {
 		$(this.dialog).dialog("close");
+	},
+	getAjaxJSON : function() {
+		$.ajax({
+			type : "GET",
+			url : "/struts/ajax.do",
+			contentType : "application/json",
+			dataType : "json",
+			success : function(response) {
+				console.log(response);
+			},
+			error : function(response) {
+				console.log(response);
+			}
+		});
 	}
 };
 
