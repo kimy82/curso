@@ -7,16 +7,22 @@
 
 	<form-beans>
 		<form-bean name="welcomeForm" type="com.atos.curso.forms.WelcomeForm" />
+		<form-bean name="errorForm" type="com.atos.curso.forms.ErrorForm" />
 		<form-bean name="employeeForm" type="com.atos.curso.forms.EmployeeForm" />
 		
 		<form-bean name="employeeXMLValidationForm"
 			type="com.atos.curso.forms.EmployeeXMLValidationForm" />
+			
+			
 	</form-beans>
 
 	<global-exceptions>
 
 		<exception key="error.global.mesage" type="java.io.IOException"
 			path="/error.jsp" />
+			
+		<exception key="error.global.mesage" type="org.apache.struts.chain.commands.InvalidPathException" 
+			handler="com.atos.curso.handlers.NotFoundExceptionHandler" path="/error2.jsp" />
 
 		<exception key="error.global.mesage" type="javax.naming.NoPermissionException"
 			handler="com.atos.curso.handlers.PermissionExceptionsHandler" path="/error.jsp" />
@@ -33,6 +39,9 @@
 		<action path="/iOExceptionAction" type="com.atos.curso.actions.IOExceptionAction"
 			name="welcomeForm" scope="session">
 			<forward name="success" path="/notReached.jsp" />
+		</action>
+		
+		<action path="/ajax" type="com.atos.curso.actions.AjaxAction">
 		</action>
 
 		<action path="/permissionExceptionAction"
@@ -76,6 +85,15 @@
 			
 		<action path="/downloadTutorial" type="com.atos.curso.actions.TutorialDownloadAction">
  		</action>
+ 		
+ 		<action
+			path="/locale"
+			type="com.atos.curso.actions.LanguageSelectAction"
+			parameter="method"
+			>
+			<forward name="success" path="/welcome.jsp"/>
+		</action>
+		
 			
 	</action-mappings>
 
